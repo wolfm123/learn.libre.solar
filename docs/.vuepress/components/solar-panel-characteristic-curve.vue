@@ -2,50 +2,52 @@
     <div style="overflow:auto">
         <line-chart :chart-data="datacollection" :options="chartOptions"></line-chart>
        
-         <h4>Define the datasheet parameters at standard test conditions (STC):</h4>
-         <div class="left">voltage in maximum power point:</div>
+         <h3>The following steps must be followed in order to update IV-PV curves:</h3>
+         <h4>1. Define the datasheet parameters at standard test conditions (STC):</h4>
+         <div class="left">Voltage in maximum power point:</div>
          <div class="right"><input type="number" id="vmpp_stc" step="0.1" value="39.8" @change="updateGraph()"> V</div> 
-         <div class="left">current in maximum power point:</div>
+         <div class="left">Current in maximum power point:</div>
          <div class="right"><input type="number" id="impp_stc" step="0.1"value="5.40" @change="updateGraph()"> A</div>
-         <div class="left">open circuit voltage:</div>
+         <div class="left">Open circuit voltage:</div>
          <div class="right"><input type="number" id="voc_stc" step="0.1" value="48.3" @change="updateGraph()"> V</div>
-         <div class="left">short circuit current:</div>
+         <div class="left">Short circuit current:</div>
          <div class="right"><input type="number" id="isc_stc" step="0.1" value="5.80" @change="updateGraph()"> A</div>
          <br>
          <br>
          <br>
          <br>
          <br>
-         <h4>Calculate Solar Irradiance based on your location from the link below: </h4>
-         <div class="left">Solar irradiance on the module surface:</div>
+         <h4>2. Calculate Solar Irradiance based on your location from the link below: </h4>
+         <div class="left">Solar Irradiance on the module surface:</div>
          <div class="right"><input type="number" id="g_location" step="0.1" value="24" @change="updateGraph()"> kW.h/m^2.day</div>
          <br>
-         <h4>Define Temperature Correction:</h4>
-         <div class="left">temperature coefficient of Isc: </div>
+         <h4>3. Define Temperature Correction:</h4>
+         <div class="left">Temperature coefficient of Isc: </div>
          <div class="right"><input type="number" id="isc_coeff" step="0.1" value="0.0035" @change="updateGraph()"> A/°K</div>
-         <div class="left">temperature coefficient of Voc:</div>
+         <div class="left">Temperature coefficient of Voc:</div>
          <div class="right"><input type="number" id="voc_coeff" step="0.1" value="-0.1368" @change="updateGraph()"> V/°K</div>  
          <body>
          <br>
          <br>    
-         <h4>Calculate Cell Temperature:</h4>
-         <div class="left">ambient temperature: </div>
+         <h4>4. Calculate Cell Temperature:</h4>
+         <div class="left">Ambient Temperature: </div>
          <div class="right"><input type="number" id="t_ambient" step="0.1" value=""/> °C</div>
-         <div class="left">nominal operating cell temperature (NOCT): </div>
+         <div class="left">Nominal Operating Cell Temperature (NOCT): </div>
          <div class="right"><input type="number" id="t_nominal" step="0.1" value="" /> °C</div>
          <br>
          <br>
          <br>
-         <button @click="calc()">calculate</button>
+         <button @click="calc()">Calculate</button>
          <br>
-         <div class="left">your cell temperature is </div>
+         <div class="left">Your Cell Temperature is </div>
          <div class=right><output type="number" id="t_cell" /> °C</div>
          </body>
          <br>
-         <h4>Insert the measured Cell Temperature:</h4>
-         <div class="left">measured cell temperature:</div>
+         <h4>5. Insert the measured Cell Temperature:</h4>
+         <div class="left">Cell Temperature calculated value:</div>
          <div class="right"><input type="number" id="t_measured" step="0.1" value="25" @change="updateGraph()"> °C</div>  
          <br>
+         <button @click="updateGraph()">Update</button>
          <br>
     </div>
 </template>
