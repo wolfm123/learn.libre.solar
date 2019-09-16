@@ -2,7 +2,7 @@
     <div style="overflow:auto">
         <line-chart :chart-data="datacollection" :options="chartOptions"></line-chart>
        
-         <h4>Insert datasheet parameters at standard test conditions (STC):</h4>
+         <h4>Define the datasheet parameters at standard test conditions (STC):</h4>
          <div class="left">voltage in maximum power point:</div>
          <div class="right"><input type="number" id="vmpp_stc" step="0.1" value="39.8" @change="updateGraph()"> V</div> 
          <div class="left">current in maximum power point:</div>
@@ -15,6 +15,10 @@
          <br>
          <br>
          <br>
+         <br>
+         <h4>Calculate Solar Irradiance based on your location from the link below: </h4>
+         <div class="left">Solar irradiance on the module surface:</div>
+         <div class="right"><input type="number" id="g_location" step="0.1" value="24" @change="updateGraph()"> kW.h/m^2.day</div>
          <br>
          <h4>Define Temperature Correction:</h4>
          <div class="left">temperature coefficient of Isc: </div>
@@ -34,19 +38,13 @@
          <br>
          <button @click="calc()">calculate</button>
          <br>
-         <div class="left">your cell temperature is: </div>
+         <div class="left">your cell temperature is </div>
          <div class=right><output type="number" id="t_cell" /> °C</div>
-         <br>
          </body>
          <br>
-         <br>
-         <div class="left">Insert the measured temperature:</div>
+         <h4>Insert the measured Cell Temperature:</h4>
+         <div class="left">measured cell temperature:</div>
          <div class="right"><input type="number" id="t_measured" step="0.1" value="25" @change="updateGraph()"> °C</div>  
-         <br>
-         <br>
-         <h4>Define Solar Irradiance based on your location: </h4>
-         <div class="left">Solar irradiance on the module surface:</div>
-         <div class="right"><input type="number" id="g_location" step="0.1" value="24" @change="updateGraph()"> kW.h/m^2.day</div>
          <br>
          <br>
     </div>
