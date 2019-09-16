@@ -66,7 +66,7 @@ import LineChart from './LineChart.js'
  var g_location;   // solar irradiance input by the user measured in (kilowatt-hours per square meter per day):
  var g_measured;   // solar irradiance with units adjustable to watts per square meter
  var t_ambient;    // current ambient temperature based on location
- var noct;         // nominal operating cell temperature
+ var t_nominal;    // nominal operating cell temperature
  var t_cell;       // measured cell temperature
 
 export default {
@@ -207,7 +207,7 @@ export default {
             t_nominal = parseFloat(document.getElementById("t_nominal").value);  
         },
         /** method calc
-        * @return the  current temperature cell based on location based on nominal operating cell temperature and ambient temperature
+        * @return the current temperature cell based on the nominal operating cell temperature and ambient temperatures
         */
         calc(){
             this.getValues();   
