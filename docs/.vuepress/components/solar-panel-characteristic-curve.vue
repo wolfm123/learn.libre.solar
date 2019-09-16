@@ -28,7 +28,7 @@
          <div class="left">ambient temperature: </div>
          <div class="right"><input type="number" id="t_ambient" step="0.1" value=""/> °C</div>
          <div class="left">nominal operating cell temperature (NOCT): </div>
-         <div class="right"><input type="number" id="noct" step="0.1" value="" /> °C</div>
+         <div class="right"><input type="number" id="t_nominal" step="0.1" value="" /> °C</div>
          <br>
          <br>
          <br>
@@ -65,9 +65,9 @@ import LineChart from './LineChart.js'
  var t_measured;   // cell temperature measured based on location 
  var g_location;   // solar irradiance input by the user measured in (kilowatt-hours per square meter per day):
  var g_measured;   // solar irradiance with units adjustable to watts per square meter
- var t_air;
- var t_nominal;
- var t_cell;
+ var t_ambient;    // current ambient temperature based on location
+ var noct;         // nominal operating cell temperature
+ var t_cell;       // measured cell temperature
 
 export default {
     components: {
@@ -203,16 +203,16 @@ export default {
             t_measured = parseFloat(document.getElementById("t_measured").value);
             g_location = parseFloat(document.getElementById("g_location").value);        
             g_measured = (g_location*1000)/24;        
-            t_ambient= parseFloat(document.getElementById("t_ambient").value);  // current ambient temperature based on location
-            noct = parseFloat(document.getElementById("noct").value);  // nominal operating cell temperature
+            t_ambient= parseFloat(document.getElementById("t_ambient").value);  
+            t_nominal = parseFloat(document.getElementById("t_nominal").value);  
         },
         /** method calc
         * @return the  current temperature cell based on location based on nominal operating cell temperature and ambient temperature
         */
         calc(){
             this.getValues();   
-            t_cell = document.getElementById("t_cell");   // current cell temperature 
-            t_cell.value = t_ambient + ((g_measured/800) *(noct -20));            
+            t_cell = document.getElementById("t_cell");    
+            t_cell.value = t_ambient + ((g_measured/800) *(t_nominal -20));            
         },
        /** method i(v) 
         * @return the output current of solar panel based on voltage values 
