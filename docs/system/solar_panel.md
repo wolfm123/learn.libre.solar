@@ -1,19 +1,17 @@
 # Solar Panels
 
-## Introduction
+The first thought that comes to the mind when someone thinks about alternative or renewable energy is usually large **solar panels** on the rooftop of their housing. These **solar panels**, also known as **photovoltaic modules (PV modules)**, convert sunlight into electricity which is considered to be the main source of renewable energy for decades.
 
-  The first thought that comes to the mind when someone thinks about alternative or renewable energy is usually large **solar panels** on the rooftop of their housing. These **solar panels**, also known as **photovoltaic modules (PV modules)**, convert sunlight into electricity which is considered to be the main source of renewable energy for decades.
+![Solar Panels](./images/solar-panels.jpg)
 
-  ![Solar Panels](./images/solar-panels.jpg)
+**Over the years,** photovoltaics has gradually gained wide popularity as an alternative way to produce electricity.
+There has been a meteoric exponential rise of the photovoltaics technology with no sign of a slowdown as shown in the figure below. the reason behind this explosion comes back to the increase of electricity costs which pushed the end-users more towards the usage of solar systems which would allow them to reduce their bills by generating their own electricity and feeding the excess power back into the grid as as a way of receiving payments for the renewable electricity they generate, called as Feed-in-tarrifs. However, exporting electricity to the grid is no longer a remunerative approach due to fluctuated Feed-in-tarrifs rates so the end-users now tend to use solar power to reduce their own energy consumption and in return their life expenses. When power is drawn from the electrical grid at a flat rate, there is no need to store that solar power.
 
-  **Over the years,** photovoltaics has gradually gained wide popularity as an alternative way to produce electricity.
-  There has been a meteoric exponential rise of the photovoltaics technology with no sign of a slowdown as shown in the figure below. the reason behind this explosion comes back to the increase of electricity costs which pushed the end-users more towards the usage of solar systems which would allow them to reduce their bills by generating their own electricity and feeding the excess power back into the grid as as a way of receiving payments for the renewable electricity they generate, called as Feed-in-tarrifs. However, exporting electricity to the grid is no longer a remunerative approach due to fluctuated Feed-in-tarrifs rates so the end-users now tend to use solar power to reduce their own energy consumption and in return their life expenses. When power is drawn from the electrical grid at a flat rate, there is no need to store that solar power.
-  
-  ![Exponential Growth of Solar PV](./images/pv_growth.png)
-  
-  [Exponential growth-curve on a semi-log scale of worldwide installed photovoltaics in gigawatts since 1992](https://de.wikipedia.org/wiki/Datei:PV_cume_semi_log_chart_2014_estimate.svg)
+![Exponential Growth of Solar PV](./images/pv_growth.png)
 
-## How do Solar Panels Work?
+[Exponential growth-curve on a semi-log scale of worldwide installed photovoltaics in gigawatts since 1992](https://de.wikipedia.org/wiki/Datei:PV_cume_semi_log_chart_2014_estimate.svg)
+
+## Working Principles
 
  A solar panel (PV module), as a basic definition, is a device that will generate electricity flow under sunlight. the generated electricity can then be used to either charge batteries or power  electrical devices, Solar panels can also be used directly in systems without the need for batteries usage. Most solar panels are framed in aluminum, overlapped with tempered glass and secured by a waterproof backrest. they are composed of smaller units called solar cells where crystalline silicon is sandwiched between conductive layers. each silicon atom is connected to its neighbours by four strong bonds, which keep the electrons in place so no current can flow.  the key behind this is a silicon solar cell uses two different types of silicon; an n-type silicon which has extra electrons and p-type silicon has extra spaces for electrons, called holes. where the two types can meet, electrons can wander across the p/n junction, leaving a positive charge on one side and creating negative charge on the other. You can think of light as the flow of tiny particles called **photons** shooting out from the Sun. when one of these photons strikes the silicon cell with enough energy, it can knock an electron from its bond, leaving a hole. The negatively charged electron and location of the positively charged hole are now free to move around but because of the electric field at the p/n junction, they will only go one way, the electron is drawn to the n-side while the hole is drawn to the p-side. The mobile electrons are collected by thin metal fingers at the top of the cell. From there, they flow through an external circuit, doing electrical work, like powering a lightbulb, before returning through the conductive aluminum sheet on the back. Each silicon cell only puts half a volt, but you can string them together in modules to get more power. For instance, twelve photovoltaic cells are enough to charge a cellphone, while it takes many modules to power an entire house. Electrons are the only moving parts in a solar cell and they all go back where they came from. There's nothing to get worn out or used up, so solar cells can last for decades
 
@@ -21,9 +19,9 @@
 
 [Tssenthi [CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)]](https://commons.wikimedia.org/wiki/File:Silicon_solar_cell.gif)
 
-## Cell Technology
+## Cell Technologies
 
-There are several technologies used to produce solar cells, the smallest units that together build the solar modules. the common types  used currently in the market are as follow:  
+There are several technologies used to produce solar cells, the smallest units that together build the solar modules. the common types  used currently in the market are as follow:
 
 **Monocrystalline solar panels:** Can be classified as the most efficient and expensive solar panels as they are made with Monocrystalline cells. These solar cells use very pure silicon and involve a complicated crystal growth process. Long silicon rods are produced which are cut into slices of .2 to .4 mm thick discs or wafers which are then processed into individual cells that are wired together in the solar panel. Monocrystalline solar cells are about 13-16% efficient at converting sunlight to electricity.
 
@@ -39,7 +37,7 @@ Additionally, There are also **hybrid solar panels** under research and developm
 
 ![From a solar cell to a PV System](./images/solar-cell-cycle.png)
 
-## Solar Electrical Characteristics
+## Electrical Characteristics
 
 PV panels produce direct current electricity (DC), the same type of electricity that is produced by batteries. The home appliances, on the other hand, use alternating current (AC). DC electricity flows in one direction only, while AC electricity changes direction rapidly.
 In order to use solar electricity to power household devices, a solar inverter, which coverts DC to AC, is required.
@@ -72,7 +70,7 @@ The amount of energy in Watt-hours that a panel will produce is a product of the
 **PV modules have three different voltage ratings:**
 
 - **Nominal Voltage** refers to the voltage of the battery that the module is best suited to charge; this is a leftover term from the days when solar panels were used only to charge batteries. The actual voltage output of the panel changes as lighting and temperature conditions change, so there’s never one specific voltage at which the panel operates. Nominal voltage allows us, at a glance, to make sure the panel is compatible with a given system.
-  
+
 - **Voltage at Maximum Power or $Vmp$** is the highest voltage the panel can produce while connected to a system and operating at peak efficiency under standard test conditions (STC) where the greatest power output of the module occurs.
 
 - **Open Circuit Voltage  or $Voc$** is the maximum voltage that the panel can produce when not connected to an electrical circuit or system. Voc can be measured with a voltmeter or multimeter directly contacting the panel’s terminals or the ends of its built-in cables. This voltage is used when testing solar modules fresh out of the box and can then be used after doing temperature correction in the system design. typical VOC values for different types of crystalline PV modules are as follow:
@@ -106,9 +104,9 @@ and these aforementioned factors in return affect the maximum power point (MPP).
 ### Temperature Dependency
 
 Most of us assume that stronger and hotter the sun is, the more electrical power will be produced by a solar panel since sunny days result in high air temperatures. Do high temperatures affect the power supplied by solar cells?
-The short answer is yes. Like all other semiConductor devices, Solar panels' efficiency is sensitive to temperature variability since the current and voltage output of a PV panel is generally affected by weather conditions. Solar modules are tested at a temperature of 25 degrees Celsius (STC) and depending on their installed location, heat can reduce output efficiency by 10-25%.  
-As the temperature of the solar panel increases, its output current increases exponentially, while the voltage output is reduced linearly.  
-In general, low-temperature conditions improve the performance and efficiency of the module, while high temperatures reduce the power output and lead to other thermal losses.  
+The short answer is yes. Like all other semiConductor devices, Solar panels' efficiency is sensitive to temperature variability since the current and voltage output of a PV panel is generally affected by weather conditions. Solar modules are tested at a temperature of 25 degrees Celsius (STC) and depending on their installed location, heat can reduce output efficiency by 10-25%.
+As the temperature of the solar panel increases, its output current increases exponentially, while the voltage output is reduced linearly.
+In general, low-temperature conditions improve the performance and efficiency of the module, while high temperatures reduce the power output and lead to other thermal losses.
 The impact of temperature on solar panel efficiency is known as the temperature coefficient.
 
 If you look at the data sheet provided by your solar panel manufacturer they will refer to a term normally described as the temperature coefficient pMax. This value, which is normally given in the form of negative percentage, reveals the impact of temperature on the panel.
@@ -139,36 +137,15 @@ The figure represents the equivalent five-parameters model of a PV cell whose de
 
 ## IV-PV Curves
 
-### The current-voltage curve and the power-voltage curve of a solar panel
+The following interactive graph plots the characteristic curves of a solar panel, calculated from datasheet parameters [1]. The graphs can be adjusted for a specific solar module using the datasheet parameters. You can use it to evaluate how the ambient temperature and the irradiance influences the solar panel performance.
 
-The [electrical data](http://electricalacademia.com/renewable-energy/solar-panel-data-sheet-specification-parameters/) used below are measured at **Standart Test Conditions (STC): Irradiance of 1000 Watts per square meter and cell temperature at 25 degrees celsius of monocrystalline solar panel**, with the following specifications:
+The default values in the graph are based on a typical 150 W module with 36 cells, suitable for 12V systems.
 
-|            Parameter                                 |       Value       |
-| :---------------------------------------------------:| :----------------:|
-|            number of cells                           |       72          |
-|      power at maximum power point "$pmpp$"           |       215  W      |
-|     voltage at maximum power point "$vmpp$"          |       39,8 V      |
-|     current at maximum power point "$impp$"          |       5.40 A      |
-|         open circuit voltage "$voc$"                 |       48.3 V      |
-|         short circuit current "$isc$"                |       5.80 A      |
-|      temperature coefficient of $Isc$ "$α$"          |       0.0035 A/°K |
-|      temperature coefficient of $Voc$ "$β$"          |      -0.1368 V/°K |
-
- 
 <solar-panel-characteristic-curve/>
 
 
-**Calculate [Solar Irradiance](http://www.solarelectricityhandbook.com/solar-irradiance.html)**
+<h2>References</h2>
 
+[1] El Tayyan, Ahmed A.: A simple method to extract the parameters of the single-diode model of a PV system. Turkish Journal of Physics, 2013, [link](https://pdfs.semanticscholar.org/c8af/14dd80bd568eb8c717ae24fd9ea6222f9ad0.pdf)
 
-As shown in the previous figure, the power obtained from the panel is zero whenever it is short circuited ($0 x Isc = 0$) or when no current is drawn from the panel ($Voc x 0 = 0$).
-In between those two zero power points the product $P = V x I$ reaches a maximum: the Maximum Power Point ($Pm = Vm x Im$).  
-The photovoltaic translation equations were made over a wide range of **temperature** and **irradiance** conditions:
-
- • **For device temperatures from 25°C to 75°C**
-
- • **For Irradiance levels from 100 to 1000 watts/m2**
-
- For further reading regarding the equations, **please follow this [paper](https://pdfs.semanticscholar.org/c8af/14dd80bd568eb8c717ae24fd9ea6222f9ad0.pdf)**. 
-
- For the translation equations, this **[approach](https://www.nrel.gov/docs/legosti/old/20279.pdf)** was used.
+[2] Calculator for daily solar irradiance: [Website](http://www.solarelectricityhandbook.com/solar-irradiance.html)
