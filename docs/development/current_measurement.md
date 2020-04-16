@@ -10,7 +10,7 @@ There exists various techniques for current measurement, but can be broadly clas
 
 Shunt is a low value resistor ($R_s$) used in current measurement. It is generally connected in series to the branch in which current is to be measured as shown in Fig.1. Using Ohm's law, the current through the branch of interest can be calculated by measuring the voltage across the shunt resistor. For example, if $V_s$ (or $V_{shunt}$) is the measured voltage across the shunt of value $R_s$ (or $R_{shunt}$), then current is given by
 
-$$I_s = \frac{V_s}{R_s}\$$
+$$I_s = \frac{V_s}{R_s}$$
 
 In order to minimize the power loss and heat dissipation in the circuit, shunts must have very low value of resistance (in the range of milli ohms). But this comes with the downside of low voltage drop across the shunt. Hence, according to the requirement, care must be taken in choosing the appropriate value of resistance for the shunt.
 
@@ -21,7 +21,7 @@ In order to minimize the power loss and heat dissipation in the circuit, shunts 
 </center>
 </figure>
 
-To overcome the issue of low voltage drop across the shunt, a voltage amplifier (current sense amplifier) can be used which can amplify this small voltage drop to appropriate range. This voltage amplifier is used in differential configuration in order to measure the voltage difference between its two terminals as shown in Fig.2. The gain depends on the resistors **R3/R1** and **R4/R2**. Further, the output from the current sense amplifier can be applied to Analog to Digital Converter (ADC) or other intermediate circuit to obtain the value of current of interest. 
+To overcome the issue of low voltage drop across the shunt, a voltage amplifier (current sense amplifier) can be used which can amplify this small voltage drop to appropriate range. This voltage amplifier is used in differential configuration in order to measure the voltage difference between its two terminals as shown in Fig.2. The gain depends on the resistors **$$\frac{R_3}{R_1$}$$** and **$$\frac{R_4}{R_2$}$$**. Further, the output from the current sense amplifier can be applied to Analog to Digital Converter (ADC) or other intermediate circuit to obtain the value of current of interest. 
 
 <figure>
 <center>
@@ -32,13 +32,13 @@ To overcome the issue of low voltage drop across the shunt, a voltage amplifier 
 
 The output voltage $V_{out}$ is given by 
 
-V_{out} = Gain \cdot V_{shunt}
+$$V_{out} = Gain \cdot V_{shunt}$$
 
-where Gain = Gain = \frac{R_1}{R_2} and V_{shunt} = I_{shunt} \cdot R_{shunt}
+where $$Gain = Gain = \frac{R_1}{R_2}$$ and $$V_{shunt} = I_{shunt} \cdot R_{shunt}$$
 
-The circuit shown in Fig.2 can measure only uni-directional current. In order to measure bi-directional current of same magnitude, the resistor $R_3$ has to be connected to a reference voltage (mid supply voltage) as shown in Fig.3. The required reference voltage can be generated in various ways like - using Zener diode, voltage follower Opamp, DAC from micro-controller and many more methods which vary according to the user requirements. In the following case, V_{out} is given by
+The circuit shown in Fig.2 can measure only uni-directional current. In order to measure bi-directional current of same magnitude, the resistor $R_3$ has to be connected to a reference voltage (mid supply voltage) as shown in Fig.3. The required reference voltage can be generated in various ways like - using Zener diode, voltage follower Opamp, DAC from micro-controller and many more methods which vary according to the user requirements. In the following case, $V_{out}$ is given by
 
-V_{out} = Gain \cdot V_{shunt} + V_{ref}
+$$V_{out} = Gain \cdot V_{shunt} + V_{ref}$$
 
 <figure>
 <center>
@@ -129,9 +129,9 @@ When the current sense amplifier has external gain setting resistors, problems l
 
 Choosing a suitable shunt resistor always comes with the trade-off between measurement accuracy and power dissipation. Choosing shunt with high resistance, increases the voltage developed across them. This increases the accuracy of measurement dramatically but also results in high power dissipation. Whereas, choosing a low value shunt will help reduce the problem of power dissipation, but with less accuracy. Apart from deciding the value of shunt resistor, the next challenge would be a proper PCB layout for the shunt. Ignoring this often leads to error in measurement results. To overcome the challenge, dedicated ICs like [INA250](https://www.ti.com/product/INA250) can be used which integrates the shunt resistor into the IC and provides the best possible PCB layout to achieve accurate measurement results.
 
-Selection of suitable ADC is also equally important to obtain accurate measurement. The smallest possible voltage that can be measured by an ADC depends on it's input voltage range and resolution. For example, an ADC with full scale input range($V_in$) of 2.5V and resolution(n) of 16-bits, the smallest measurable voltage($V_min$) is approximately 38uV (micro-volts).
+Selection of suitable ADC is also equally important to obtain accurate measurement. The smallest possible voltage that can be measured by an ADC depends on it's input voltage range and resolution. For example, an ADC with full scale input range($V_{in}$) of 2.5V and resolution($n$) of 16-bits, the smallest measurable voltage($V_{min}$) is approximately 38uV (micro-volts).
 
-$$V_{min} = \frac{V_{in}}{2^n}\$$
+$$V_{min} = \frac{V_{in}}{2^n}$$
 
 Dedicated ADC designed specifically for bi-directional current measurement like [INA226](https://www.ti.com/product/INA226) has an input range of $\pm 80mV$ with resolution of 16-bits. This not only eliminates the need of amplifying the voltage drop across shunt, but also can measure really voltages.
 
@@ -141,7 +141,7 @@ In current measurement, filtering of the signals may be required for several dif
 
 When the current being measured is inherently noisy, appropriate simple filters can be used at the output of current sense amplifier to get rid of noise. But, along with the input signal, noise will also be amplified by the amplifier. In this case, since low magnitude signals are being amplified, effect of noise can be significant. This also comes with the downside of loading down of the ADC.
 
-Current sensing applications, often have high amplitude and fast switching common-mode signal on the branch to which shunt is connected, which may have frequent overshoot (spike). Along with this, in low value shunts (\leq 5\ohm), inductance becomes more significant which increases the amplitude of such spike transient events. The amplifier must be protected against these overshoots, even though spike frequency are above the rated bandwidth of the device. Hence, appropriate filters are used at the input side of amplifier as shown in the Fig.9. 
+Current sensing applications, often have high amplitude and fast switching common-mode signal on the branch to which shunt is connected, which may have frequent overshoot (spike). Along with this, in low value shunts ($$\leq 5\ohm$$), inductance becomes more significant which increases the amplitude of such spike transient events. The amplifier must be protected against these overshoots, even though spike frequency are above the rated bandwidth of the device. Hence, appropriate filters are used at the input side of amplifier as shown in the Fig.9. 
 
 <figure>
 <center>
