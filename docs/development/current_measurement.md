@@ -133,7 +133,7 @@ In current measurement, filtering of the signals may be required for various rea
 
 When the current being measured is noisy, appropriate simple filters can be used at the output of current sense amplifier to get rid of noise. But, along with the input signal, noise will also be amplified by the amplifier. In this case, since low magnitude signals are being amplified, effect of noise can be significant. This also comes with the downside of loading down of the ADC.
 
-Current sensing applications, often have high amplitude and fast switching common-mode signal on the branch to which shunt is connected, which may have frequent overshoot (spike). Along with this, in low value shunts ($\leq 5 Ohm$), inductance becomes more significant which increases the amplitude of such spikes. The amplifier must be protected against these overshoots, even though spike frequency are above the rated bandwidth of the device. Hence, appropriate filters are used at the input side of amplifier as shown in the Fig.8. 
+Current sensing applications, often have high amplitude and fast switching common-mode signal on the branch to which shunt is connected, which may have frequent overshoot (spike). Along with this, in low value shunts ($\leq$5 Ohm), inductance becomes more significant which increases the amplitude of such spikes. The amplifier must be protected against these overshoots, even though spike frequency are above the rated bandwidth of the device. Hence, appropriate filters are used at the input side of amplifier as shown in the Fig.8. 
 
 <figure>
 <center>
