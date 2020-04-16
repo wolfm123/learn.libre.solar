@@ -21,7 +21,7 @@ In order to minimize the power loss and heat dissipation in the circuit, shunts 
 </center>
 </figure>
 
-To overcome the issue of low voltage drop across the shunt, a voltage amplifier (current sense amplifier) can be used which can amplify this small voltage drop to appropriate range. This voltage amplifier is used in differential configuration in order to measure the voltage difference between its two terminals as shown in Fig.2. The gain depends on the resistors **$$\frac{R_3}{R_1$}$$** and **$$\frac{R_4}{R_2$}$$**. Further, the output from the current sense amplifier can be applied to Analog to Digital Converter (ADC) or other intermediate circuit to obtain the value of current of interest. 
+To overcome the issue of low voltage drop across the shunt, a voltage amplifier (current sense amplifier) can be used which can amplify this small voltage drop to appropriate range. This voltage amplifier is used in differential configuration in order to measure the voltage difference between its two terminals as shown in Fig.2. The gain depends on the resistors **$R_3/R_1$** and **$R_4/R_2$**. Further, the output from the current sense amplifier can be applied to Analog to Digital Converter (ADC) or other intermediate circuit to obtain the value of current of interest. 
 
 <figure>
 <center>
@@ -34,7 +34,7 @@ The output voltage $V_{out}$ is given by
 
 $$V_{out} = Gain \cdot V_{shunt}$$
 
-where $$Gain = Gain = \frac{R_1}{R_2}$$ and $$V_{shunt} = I_{shunt} \cdot R_{shunt}$$
+where $$Gain = \frac{R_1}{R_2}$$ and $$V_{shunt} = I_{shunt} \cdot R_{shunt}$$
 
 The circuit shown in Fig.2 can measure only uni-directional current. In order to measure bi-directional current of same magnitude, the resistor $R_3$ has to be connected to a reference voltage (mid supply voltage) as shown in Fig.3. The required reference voltage can be generated in various ways like - using Zener diode, voltage follower Opamp, DAC from micro-controller and many more methods which vary according to the user requirements. In the following case, $V_{out}$ is given by
 
@@ -141,7 +141,7 @@ In current measurement, filtering of the signals may be required for several dif
 
 When the current being measured is inherently noisy, appropriate simple filters can be used at the output of current sense amplifier to get rid of noise. But, along with the input signal, noise will also be amplified by the amplifier. In this case, since low magnitude signals are being amplified, effect of noise can be significant. This also comes with the downside of loading down of the ADC.
 
-Current sensing applications, often have high amplitude and fast switching common-mode signal on the branch to which shunt is connected, which may have frequent overshoot (spike). Along with this, in low value shunts ($$\leq 5\ohm$$), inductance becomes more significant which increases the amplitude of such spike transient events. The amplifier must be protected against these overshoots, even though spike frequency are above the rated bandwidth of the device. Hence, appropriate filters are used at the input side of amplifier as shown in the Fig.9. 
+Current sensing applications, often have high amplitude and fast switching common-mode signal on the branch to which shunt is connected, which may have frequent overshoot (spike). Along with this, in low value shunts ($\leq 5\ohm$), inductance becomes more significant which increases the amplitude of such spike transient events. The amplifier must be protected against these overshoots, even though spike frequency are above the rated bandwidth of the device. Hence, appropriate filters are used at the input side of amplifier as shown in the Fig.9. 
 
 <figure>
 <center>
