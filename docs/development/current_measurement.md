@@ -34,7 +34,7 @@ The output voltage $V_{out}$ is given by
 
 $$V_{out} = Gain \cdot V_{shunt}$$
 
-where $$Gain = \frac{R_1}{R_2}$$ and $$V_{shunt} = I_{shunt} \cdot R_{shunt}$$
+where $$Gain = \frac{R_4}{R_2}$$ and $$V_{shunt} = I_{shunt} \cdot R_{shunt}$$
 
 The circuit shown in Fig.2 can measure only uni-directional current. In order to measure bi-directional current of same magnitude, the resistor $R_3$ has to be connected to a reference voltage (mid supply voltage) as shown in Fig.3. The required reference voltage can be generated in various ways like - using Zener diode, voltage follower Opamp, DAC from micro-controller and many more methods which vary according to the user requirements. In the following case, $V_{out}$ is given by
 
