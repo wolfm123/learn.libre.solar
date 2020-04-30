@@ -38,7 +38,7 @@ where $$Gain = \frac{R_4}{R_2}$$ and $$V_{s} = I_{s} \cdot R_{s}$$
 
 The circuit shown in Fig.2 can measure only uni-directional current. In order to measure bi-directional current of same magnitude, the resistor $R_3$ has to be connected to a reference voltage (mid supply voltage) as shown in Fig.3. The required reference voltage can be generated in various ways like - using Zener diode, voltage source with voltage follower Opamp, DAC from micro-controller and many more methods which vary according to the user requirements. In the following case, $V_{out}$ is given by
 
-$$V_{out} = Gain \cdot V_{shunt} + V_{ref}$$
+$$V_{out} = Gain \cdot V_{s} + V_{ref}$$
 
 <figure>
 <center>
@@ -113,6 +113,26 @@ In this configuration, the shunt is placed between the supply voltage and the lo
 </center>
 </figure>
 
+When higher supply voltages (30-40V) are used, the circuit needs to be modified such that low voltage can be measured across the output, so that it can be integrated with other intermediate circuits or microcontroller. The modification depends mainly on the required output volatge range. An example of such circuit is shown below in the Fig.8 where the output voltage has to be within 5V.
+
+<figure>
+<center>
+    <img src="./images/modified_high_side_measurement.svg" height="auto" width="auto" />
+    <figcaption><b>Figure 8.</b> Modified high-side current measurement for high voltages.</figcaption>
+</center>
+</figure>
+
+Note - $V_{dd}$ = $V_{CC}$ + 10
+
+The differential amplifier is further connected to a NPN common emitter amplifier to translate the measured voltage into corresponding current of required range. Further a PNP current mirror is used to branch this current into output branch. The mirrored current and chosen resistor at the output branch determines the output voltage range. Design steps for such circuit is given as below
+
+1. Calculate the value of current $I_{R1}$, $I_{R2}$ and $I_{R4}$
+2. Calculate the voltage at the node $V_{eQ1}$ (emitter of $Q_1$)
+3. Determine the required value of resistor at output branch ($R_8$) and current ($I_{R8}$) such that approriate range of voltage is obtained at the output.
+4. Calculate the value of current $I_{R5}$ 
+5. Determine the value of resistor ($R_5$) required at the emitter of $Q_1$ to produce $I_{R5}$
+6. Choose the value of resistors $R_6$ and $R_7$ to mirror the current $I_{R5}$ into the output branch. i.e, $R_6$ = $R_7$
+
 ## Dedicated ICs
 
 The circuit for current measurement can be designed using individual discrete components according to the specific requirements, which provides great flexibility.
@@ -133,12 +153,12 @@ In current measurement, filtering of the signals may be required for various rea
 
 When the current being measured is noisy, appropriate simple filters can be used at the output of current sense amplifier to get rid of noise. But, along with the input signal, noise will also be amplified by the amplifier. In this case, since low magnitude signals are being amplified, effect of noise can be significant. This also comes with the downside of loading down of the ADC.
 
-Current sensing applications often have high amplitude and fast switching common-mode signals on the branch to which the shunt is connected, which may have frequent overshoot (spike). Along with this, in low value shunts, inductance becomes more significant which increases the amplitude of such spikes. The amplifier must be protected against these overshoots, even if spike frequencies are above the rated bandwidth of the device. Hence, appropriate filters are used at the input side of amplifier as shown in the Fig.8. 
+Current sensing applications often have high amplitude and fast switching common-mode signals on the branch to which the shunt is connected, which may have frequent overshoot (spike). Along with this, in low value shunts, inductance becomes more significant which increases the amplitude of such spikes. The amplifier must be protected against these overshoots, even if spike frequencies are above the rated bandwidth of the device. Hence, appropriate filters are used at the input side of amplifier as shown in the Fig.9. 
 
 <figure>
 <center>
     <img src="./images/input_filtering.svg" height="auto" width="auto" />
-    <figcaption><b>Figure 8.</b> Input side filtering of amplifier.</figcaption>
+    <figcaption><b>Figure 9.</b> Input side filtering of amplifier.</figcaption>
 </center>
 </figure>
 
