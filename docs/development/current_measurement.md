@@ -124,7 +124,7 @@ When higher supply voltages (30-40V) are used, the circuit needs to be modified 
 
 Note - $V_{dd}$ = $V_{CC}$ + 10
 
-The differential amplifier is further connected to a NPN common emitter amplifier to translate the measured voltage into corresponding current of required range. Further a PNP current mirror is used to branch this current into output branch. The mirrored current and chosen resistor at the output branch determines the output voltage range. Design steps for such circuit is given as below
+The differential amplifier is further connected to a NPN common collector amplifier to translate the measured voltage into corresponding current of required range. Further a PNP current mirror is used to branch this current into output branch. The mirrored current and chosen resistor at the output branch determines the output voltage range. Design steps for such circuit is given as below
 
 1. Calculate the value of current $I_{R1}$, $I_{R2}$ and $I_{R4}$
 2. Calculate the voltage at the node $V_{eQ1}$ (emitter of $Q_1$)
